@@ -1,0 +1,23 @@
+{
+  "name": "node-poc",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/webrtc": "^0.0.43"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "dev": "bun run index.ts"
+  },
+  "dependencies": {
+    "@huddle01/server-sdk": "^2.2.2",
+    "@huddle01/web-core": "^2.0.13-alpha.0",
+    "import2": "^1.0.3",
+    "mediasoup-client-aiortc": "^3.10.4",
+    "openai": "^4.47.1",
+    "websocket-polyfill": "^1.0.0"
+  }
+}
