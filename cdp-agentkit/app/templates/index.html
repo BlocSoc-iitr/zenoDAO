@@ -1,0 +1,107 @@
+<!-- app/templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Agent Chat</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        #chat-log {
+            height: calc(100vh - 200px);
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <div class="bg-white shadow-md rounded-lg p-6">
+            <h1 class="text-2xl font-bold mb-4">AI Agent Chat</h1>
+            
+            <div id="chat-log" class="mb-4 p-4 border rounded-lg bg-gray-50 overflow-y-scroll">
+                <!-- Chat messages will appear here -->
+            </div>
+
+            <div class="flex">
+                <input 
+                    type="text" 
+                    id="message-input" 
+                    class="flex-grow p-2 border rounded-l-lg"
+                    placeholder="Enter your message..."
+                    onkeypress="handleKeyPress(event)"
+                >
+                <button 
+                    onclick="sendMessage()" 
+                    class="bg-blue-500 text-white p-2 rounded-r-lg"
+                >
+                    Send
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const socket = new WebSocket('ws://' + window.location.host + '/ws');
+        const chatLog = document.getElementById('message-input');
+        const messageInput = document.getElementById('message-input');
+        const chatLogElement = document.getElementById('chat-log');
+
+        socket.onopen = function(e) {
+            appendMessage('Connection established', 'system');
+        };
+
+        socket.onmessage = function(event) {
+            appendMessage(event.data, 'agent');
+        };
+
+        socket.onclose = function(event) {
+            appendMessage('Connection closed', 'system');
+        };
+
+        socket.onerror = function(error) {
+            appendMessage('Error: ' + error.message, 'error');
+        };
+
+        function sendMessage() {
+            const message = messageInput.value.trim();
+            if (message) {
+                appendMessage(message, 'user');
+                socket.send(message);
+                messageInput.value = '';
+            }
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        function appendMessage(message, type) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('mb-2', 'p-2', 'rounded');
+            
+            switch(type) {
+                case 'user':
+                    messageElement.classList.add('bg-blue-100', 'text-right');
+                    messageElement.innerHTML = `<strong>You:</strong> ${message}`;
+                    break;
+                case 'agent':
+                    messageElement.classList.add('bg-green-100');
+                    messageElement.innerHTML = `<strong>Agent:</strong> ${message}`;
+                    break;
+                case 'system':
+                    messageElement.classList.add('bg-gray-200', 'italic');
+                    messageElement.textContent = message;
+                    break;
+                case 'error':
+                    messageElement.classList.add('bg-red-100', 'text-red-800');
+                    messageElement.textContent = message;
+                    break;
+            }
+
+            chatLogElement.appendChild(messageElement);
+            chatLogElement.scrollTop = chatLogElement.scrollHeight;
+        }
+    </script>
+</body>
+</html>
