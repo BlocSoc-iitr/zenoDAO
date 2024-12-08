@@ -11,7 +11,7 @@ const Navbar = () => {
   const navLinks = [
     { text: 'Proposals', path: '/', active: location.pathname === '/' },
     { text: 'Voters', path: '/delegates', active: location.pathname === '/delegates' },
-    { text: 'Attestation Committee', path: '/governance', active: location.pathname === '/governance' }
+    { text: 'Attestation Committee', path: 'http://localhost:3001/uvv-dtgk-ikp', external: true  }
   ];
 
   // Wallet connection handler
