@@ -1,224 +1,122 @@
 <a name="readme-top"></a>
 <br />
 <div align="center">
-  <a href="https://github.com/startup-dreamer/Arcave-Contracts/blob/master/README.md">
-    <img src="./assets/arcave.png" alt="icon" width="100" height="100">
-  </a>
-
-  <h3 align="center">Arcave</h3>
-
-  <p align="center">
-Step into an expansive open-world gaming metaverse on L2,  boasting low latency and scalable in-game communication with live audio and video.    <br />
-    <a href="https://github.com/startup-dreamer/Arcave-Contracts/blob/master/README.md"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://eth-india-2023.vercel.app/">Try it out</a>
-    ·
-    <a href="https://github.com/startup-dreamer/Arcave-Contracts/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/startup-dreamer/Arcave-Contracts/issues">Request Feature</a>
-  </p>
+    <img src="https://github.com/BlocSoc-iitr/zenoDAO/blob/2733829f625e6357ee25083668b37224cbf11328/photo_6244485263149612854_x.jpg" alt="icon" width="100" height="100">
 </div>
 
+<h1 align="center">zenoDAO</h1>
 
+<p align="center">
+Building autonomous on-chain AI agents to streamline DAO governance, enhance community participation, and simplify blockchain governance.
+<br />
+<br />
+</p>
 
-## Table of Contents
+---
+
+## 📑 **Table of Contents**
 - [Introduction](#introduction)
-- [Technolgies Used](#technolgies-used)
+- [Technologies Used](#technologies-used)
 - [Built With](#built-with)
 - [Screenshots](#demo-screenshots)
-- [HotKeys](#hotkeys)
-- [Todos](#todos)
-- [Challenges](#challenges-we-ran-into)
-- [Contributing](#contributing)
-- [Challenges we ran into](#challenges-we-ran-into)
-- [Contact](#contact)
+- [Features](#features)
+- [Challenges](#challenges)
 - [Acknowledgments](#acknowledgments)
 
+---
 
+## 🚀 **Introduction**
+**zenoDAO** revolutionizes DAO governance by introducing **autonomous AI agents** that make governance more efficient, participatory, and simple. By leveraging the power of **on-chain AI agents**, zenoDAO addresses the complexities of DAO governance and creates a seamless decision-making process.
 
-<!-- ABOUT THE PROJECT -->
+### 🧩 **The Problem zenoDAO Solves**
+1. **Efficient Governance:** Traditional DAO governance can be slow and require manual voting. zenoDAO introduces AI agents that autonomously vote on behalf of users.  
+2. **Enhanced Participation:** Community members can delegate their votes to trusted AI agents.  
+3. **Simplified Governance:** Reduces the complexity of DAO participation and ensures every member can have an active role, regardless of technical expertise.  
 
-## Introduction:
-Arcave introduces the Arverse, a user-friendly metaverse addressing various challenges.
-  
-- ***Low-Poly Multiplayer Space***: Within Arverse, users find an open, low-poly space designed for relaxation and social interactions among Arborgs.
+---
 
-- ***Arzone FPS***: The platform features Arzone, an aggressive multiplayer FPS game, offering an immersive and competitive gaming experience.
+## 🛠️ **Technologies Used**
 
-- ***Open Theatre***: Arverse provides an Open Theatre where users can collectively view and share important moments, fostering a sense of community.
+### **AgentKit**
+- **Purpose:** Leverages agent-based decision-making for on-chain governance.  
+- **Functionality:** Integrates with zenoDAO to facilitate AI-powered proposals, voting, and delegation of authority.  
 
-- ***Live Video and Audio Calls***: Arverse integrates live video and audio calls for immersive user interactions within its open world.
+### **On-Chain Attestation**
+- **Reputation System:** AI agents become delegates based on their on-chain reputation.  
+- **Peer Review:** Agents can attest to the actions of other agents, enhancing trust and transparency.  
 
-- ***Upcoming Leaderboard***: Anticipating the introduction of a leaderboard, which will recognize and honor top players, fostering competitiveness and engagement within the platform.
+### **Blockchain Integration**
+- **Smart Contracts:** Solidity-based smart contracts to facilitate DAO operations and support proposal voting logic.  
+- **Governance Protocol:** Custom actions created to facilitate agent voting on proposals.  
 
-## Technolgies Used:
+---
 
-### Waku:
+## 🔧 **Built With**
+- **AgentKit** — For AI-based agent delegation and proposal voting  
+- **Solidity** — For on-chain smart contracts  
+- **Foundry** — For testing and development of Solidity contracts  
+- **Hardhat** — Development framework for smart contracts  
+- **React** — Frontend framework for a smooth user experience  
+- **Express.js** — Backend for API communication  
+- **Ethers.js** — For blockchain interaction in the frontend  
 
-#### **Store Protocol:**
-- Purpose: Establishes content topics for individual game rooms.
-- Function: Facilitates the addition of kill data to the respective content topics.
-- Result: Global leaderboard is generated based on the aggregated data from content topics.
-##### **Filter Protocol**:
+---
 
-- Purpose: Enables light nodes to selectively subscribe to messages within specific content topics.
-- Function: Provides a mechanism for peers to filter and receive only relevant messages.
-- Implementation: Allows for more efficient data retrieval and processing.
-
-#### **Light Push:**
-
-- Purpose: Allows a client to receive acknowledgements upon sending content topics.
-- Function: Ensures that clients are informed of the successful transmission of their content topics.
-- Significance: Enhances reliability and confirms successful data delivery.
-
-### Huddle Alpha SDK:
-
-- Purpose: Facilitate real-time audio and video communication within designated rooms identified by unique room IDs to achieve seamless in-game audio-video interactions.
-- Structure: Token id generation to authenticate and authorize users room id assignment for organizing communication channels for real-time audio and video handling modules.
-- Implementation:  Real-time audio and video communication within designated rooms through token authentication and dynamic room ID management for in-game interactions.
-
-
-### Mantle:
-
-- Purpose: Use of Layer 2 blockchain (mantle) for low lantency while interacting with arcave deployed conracts.
-- Implementation: Contracts are made with solidity and in hardhat framework contract [repo-link](https://github.com/startup-dreamer/Arcave-Contracts)
-
-### Deployments:
-- **Frontend Deployments:** on Vercel [deployment-link]()
-- **Backend Deployments:** on Onramp [deployment-link]()
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-## Built With
-
-### Mantle's Spec
-
-#### Core-Controller
-- [CoreController](https://explorer.testnet.mantle.xyz/address/0xD76996e5EA0029BB503917828A159A87214f41FE) (Mantle tesetnet deployment link) `0xD76996e5EA0029BB503917828A159A87214f41FE`
-
-#### Avatar-Contract
-- [Avatar](https://explorer.testnet.mantle.xyz/address/0x83811800623e906Fb0a3fe8cB50289A453496321) (Mantle tesetnet deployment link) `0x83811800623e906Fb0a3fe8cB50289A453496321`
-
-
-#### ArcaveToken-Contract
-- [Arcave-Token](https://explorer.testnet.mantle.xyz/address/0x9aD28214A1e4b9df7bC390C8CB77c3797bE74279) (Mantle tesetnet deployment link) `0x9aD28214A1e4b9df7bC390C8CB77c3797bE74279`
-
-### Other Spec
-
-- [Reactjs](https://react.dev/)
-- [Hardhat](https://hardhat.org/)
-- [Foundry](https://book.getfoundry.sh/)
-- [Express](https://expressjs.com/)
-- [Socketjs](https://www.npmjs.com/package/sockjs)
-- [React-Three-Fiber](https://github.com/pmndrs/react-three-fiber)
-- [Ethersjs](https://docs.ethers.org/v5/)
-- [Huddle](https://huddle.work/)
-- [Mantle](https://www.mantle.xyz/)
-- [Waku](https://waku.org/)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## Demo Screenshots
+## 📸 **Demo Screenshots**
 
 <div align="center">
 
-### Home Page
 
-![NFT](./assets/p2.png)
+### **Proposal Voting**
+![Proposal Voting](https://github.com/BlocSoc-iitr/zenoDAO/blob/2733829f625e6357ee25083668b37224cbf11328/photo_6244485263149612866_y.jpg))
 
-### Open World
 
-![NFT](./assets/p3.png)
+### **DAO Proposals**
+![Agent Flow](https://github.com/BlocSoc-iitr/zenoDAO/blob/2733829f625e6357ee25083668b37224cbf11328/photo_6244485263149612865_y.jpg))
 
-### Shooting Game
+### **Delegate to Agent**
+![Reputation View](https://github.com/BlocSoc-iitr/zenoDAO/blob/2733829f625e6357ee25083668b37224cbf11328/photo_6244485263149612867_y.jpg)
 
-![NFT](./assets/p8.png)
-
-### Shooting Game
-![NFT](./assets/p9.png)
+### **Chat with AI Agent**
+![Reputation View](https://github.com/BlocSoc-iitr/zenoDAO/blob/2733829f625e6357ee25083668b37224cbf11328/photo_6244485263149612868_y.jpg)
 
 </div>
 
-## Hotkeys
+---
 
-|Key| Action |
-|-----------|--|
-|      Space     | Jump |
-| Shift | Sprint
-| W | Forward
-| S | Backward
-| A | Move Sideward
-| D | Move Sideward
+## ✨ **Features**
 
+| **Feature**             | **Description**                                  |
+|------------------------|--------------------------------------------------|
+| **AI Agent Delegation** | Users delegate their voting power to AI agents.  |
+| **On-Chain Voting**     | AI agents autonomously vote on proposals.        |
+| **Reputation System**   | Agents gain reputation through attestations.     |
+| **Action Creation**     | Custom actions created to vote on DAO proposals. |
+| **Transparency**        | On-chain records for all votes and agent actions.|
 
+---
 
-## TODOs
-- [x] Open Arverse
-- [x] FPS Arzone
-- [x] Video conferncing 
-- [x] Audio confrencing
-- [x] Public chat
-- [x] Screen sharing
-- [x] Video sharing
-- [x] Binge watching
-- [ ] Contract bots
-- [ ] Leaderboard
-- [ ] Dedicated server deployments
-- [ ] Cross chain communication
-- [ ] Build shift to unity
-- [ ] NFT marketplace integration
-- [ ] Land customization
-- [ ] Land Marketplace
+## 🚧 **Challenges**
 
-## Challenges we ran into
+1. **AgentKit Integration**:  
+   - Integrating **Coinbase AgentKit** with the frontend posed a challenge, requiring us to build a custom action system for proposals.  
 
-- Crafting a feature-rich 3D multiplayer game within a tight timeline presented hurdles, especially integrating FPS matches, video conferencing, and continuous binge-watching.
+2. **On-Chain Attestations**:  
+   - Creating a robust system for **agent reputation** via attestations was complex and required iterative testing to ensure fairness and accuracy.  
 
-- Challenges emerged within Mantle while attempting to mint test tokens on the chain, disrupting an otherwise smooth process.
+3. **Custom Voting Logic**:  
+   - Writing and debugging Solidity contracts to support custom proposal actions took considerable time and effort.  
 
-- Waku faced issues with nodes, encountering errors like remote peer failure and connection issues, demanding focused troubleshooting.
+4. **Frontend-Backend Communication**:  
+   - Ensuring real-time updates and synchronization between the **backend server** and **frontend UI** was a major technical challenge.  
 
-- Huddle's documentation inconsistencies caused delays, requiring additional time to address despite an otherwise smooth progression.
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+---
 
 
+## 🙌 **Acknowledgments**
 
-<!-- CONTACT -->
-## Team Contact
+Special thanks to the organizers, sponsors, and mentors of **ETH India 2024** for making this project possible.  
 
-- [@Krieger]([https://twitter.com/your_username](https://twitter.com/Startup_dmr))
-- [@0x_Clint]([https://twitter.com/your_username](https://twitter.com/Startup_dmr))
+---
 
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-Thanks to all the sponsors and organizers for making **ETH India 2023** possible.
-Mentors have been helping us, giving reviews with various aspects of the project and we are grateful to them for that.
-
-* [ETH-Global](https://ethglobal.com/events/ethonline2023)
-* [ETH-India](https://ethindia.co/)
-* [Devfolio](https://devfolio.co/discover)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>  
